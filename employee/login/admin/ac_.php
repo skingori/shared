@@ -168,7 +168,7 @@ $username=$_SESSION['login_username'];
 
 			<script type="text/javascript">
 				alert('The Account has been activated');
-				window.location="../../index.php";
+				window.location="index.php";
 			</script>
 
 			<?php

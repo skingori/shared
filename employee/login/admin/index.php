@@ -145,7 +145,7 @@ $username=$_SESSION['login_username'];
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
 							<div class="text-muted"><?php echo date("D,M,Y");?></div>
-							<div class="text-success"><a href="#"> Attendance</a></div>
+							<div class="text-success"><a href="attend.php"> Attendance</a></div>
 						</div>
 					</div>
 				</div>

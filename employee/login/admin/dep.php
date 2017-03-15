@@ -179,7 +179,7 @@ VALUES('$depname','$faculty')");
                 //display success message
                 echo "<font color='green'>Data added successfully.";
                 ?>
-        <meta content="2;#?action=home" http-equiv="refresh" />
+        <meta content="2;../admin/dep.php?action=home" http-equiv="refresh" />
 
         <?php
 

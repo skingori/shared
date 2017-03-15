@@ -106,15 +106,15 @@ $username=$_SESSION['login_username'];
 							<?php
 
 							include("../connection/connector.php");
-							$query = "SELECT * FROM farmer_table";
+							$query = "SELECT * FROM employee_table";
 							$result = mysql_query($query);
 							echo "<option></option>";
 							while($row = mysql_fetch_array($result))
 							{
-								$farmer_firstname = $row[1];
-								$farmer_lastname = $row[2];
-								$farmer_username = $row[3];
-								echo "<option>$farmer_firstname &nbsp $farmer_lastname</option>";
+								$employee_firstname = $row[1];
+								$employee_lastname = $row[2];
+                                $employee_username = $row[8];
+								echo "<option>$employee_firstname &nbsp $mployee_lastname</option>";
 							}
 
 							?>
@@ -137,7 +137,7 @@ $username=$_SESSION['login_username'];
 
 
 
-
+s
 			</form>
 
 				</div>
@@ -147,8 +147,8 @@ $username=$_SESSION['login_username'];
 				$receptor=
 				$status='UNREAD';
 				$message=$_POST['msg'];
-				$query=mysql_query("INSERT INTO daima_messages(`message_sender`,`message_recipient`,`message_details`,`message_status`,`message_time`)
-VALUES('{$_SESSION['login_username']}','$farmer_username','$message','$status' ,now())
+				$query=mysql_query("INSERT INTO messages_table(`message_sender`,`message_recipient`,`message_details`,`message_status`,`message_time`)
+VALUES('{$_SESSION['login_username']}','$employee_username','$message','$status' ,now())
 ")or die(mysql_error());
 				?>
 				<script type="text/javascript">

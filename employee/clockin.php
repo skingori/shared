@@ -10,7 +10,12 @@ if(isset($_POST['clockin'])) {
     if(empty($employeenumber)) {
 
         if(empty($employeenumber)) {
+
             echo "<font color='red'>Enter Personal number</font><br/>";
+            ?>
+            <meta content="2;index.php?action=home" http-equiv="refresh" />
+
+            <?php
         }
 
         //link to the previous page
@@ -22,8 +27,10 @@ if(isset($_POST['clockin'])) {
         $result = mysqli_query($mysqli, "INSERT INTO attendance_table(employee_attendance_number ,employee_attendance_date ,employee_attendance_timein) VALUES('$employeenumber' , now() ,now())");
 
         //display success message
-        echo "<font color='green'>Data added successfully.";
-        echo "<br/><a href='index.php'>View Result</a>";
+        ?>
+        <meta content="0;index.php?action=home" http-equiv="refresh" />
+
+        <?php
     }
 }
 ?>
