@@ -35,7 +35,7 @@
 
 						<fieldset>
 							<div class="form-group">
-								<input class="form-control" placeholder="Username" name="username" type="text" autofocus="">
+								<input class="form-control" placeholder="Employee Number" name="username" type="text" autofocus="">
 							</div>
 
 							<div class="form-group">
@@ -186,7 +186,7 @@ _END;
                          <br />
                           ........loading.....-->
 						<p align="center">
-							<meta content="2;accounts/index.php?action=home" http-equiv="refresh" />
+							<meta content="2;user/index.php?action=home" http-equiv="refresh" />
 						</p>
 						<?php
 

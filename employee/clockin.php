@@ -1,3 +1,8 @@
+<html>
+<link href="login/css/loginback.css" rel="stylesheet">
+
+<body>
+
 
 <?php
 //including the database connection file
@@ -13,7 +18,7 @@ if(isset($_POST['clockin'])) {
 
             echo "<font color='red'>Enter Personal number</font><br/>";
             ?>
-            <meta content="2;index.php?action=home" http-equiv="refresh" />
+            <meta content="0;index.html?action=home" http-equiv="refresh" />
 
             <?php
         }
@@ -24,13 +29,27 @@ if(isset($_POST['clockin'])) {
         // if all the fields are filled (not empty)
 
         //insert data to database
-        $result = mysqli_query($mysqli, "INSERT INTO attendance_table(employee_attendance_number ,employee_attendance_date ,employee_attendance_timein) VALUES('$employeenumber' , now() ,now())");
+        $result = mysqli_query($mysqli, "INSERT INTO attendance_table(employee_attendance_username ,employee_attendance_date ,employee_attendance_timein) VALUES('$employeenumber' , now() ,now())");
 
         //display success message
         ?>
-        <meta content="0;index.php?action=home" http-equiv="refresh" />
+        <meta content="0;index.html?action=home" http-equiv="refresh" />
 
         <?php
     }
 }
 ?>
+
+</body>
+
+<!-- This beeps when wrong input -->
+<audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
+<script>
+    var sound = document.getElementById("audio");
+    sound.play()
+
+</script>
+
+<!-- End of javascript -->
+
+</html>

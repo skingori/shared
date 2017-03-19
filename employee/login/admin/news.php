@@ -129,7 +129,7 @@ $username=$_SESSION['login_username'];
 
 			if($message !=''){
 				//$encrypted = md5($password); // Encrypting pssword using md5 algo
-				$query=mysql_query("INSERT INTO daima_news(`news_date`,`news_details`)
+				$query=mysql_query("INSERT INTO news_table(`news_date`,`news_details`)
         VALUES(now(),'$message')
         ")or die(mysql_error());
 

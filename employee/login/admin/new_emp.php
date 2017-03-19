@@ -151,7 +151,6 @@ $username=$_SESSION['login_username'];
 												</div>
 														<!-- My personal code -->
 
-
 					<div class="form-group">
 						<label for="phonenumber">Mobile number:</label>
 						<input class="form-control" type="text" name="employeephonenumber" id="phonenumber" placeholder="">
@@ -166,7 +165,7 @@ $username=$_SESSION['login_username'];
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="Username">Username:</label>
+						<label for="Username">Employee Number:</label>
 						<input type="text" class="form-control" placeholder="" name="employeeusername" autocomplete="off"  minlength="4" required/>
 						<!--<span class="" id="user-result"></span>-->
 						<td> <span id="user-result"></span></td>

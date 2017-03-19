@@ -162,7 +162,7 @@ $username=$_SESSION['login_username'];
 		echo "
 		<table align=\"center\" border=\"0\" width=\"90%\" class=\"table table-bordered table-striped\" data-pagination=\"true\" data-sort-name=\"name\" >
 		<tr>
-		<td><b>Login Id</b></td><td><b>Login Username</b></td> <td><b>Category</b></td></td><td><b>Status</b></td><td><b>Action</b></td></tr> ";
+		<td><b>Login Id</b></td><td><b>Employee Number</b></td> <td><b>Category</b></td></td><td><b>Status</b></td><td><b>Action</b></td></tr> ";
 		while($result=mysql_fetch_array($resource))
 		{
 			echo "<tr><td>".$result[0]."</td><td>".$result[1]."</td><td>".$result[3]."</td><td>".$result[4]."</td><td>

@@ -39,26 +39,26 @@
 							<div class="form-group">
 								<input class="form-control" placeholder="Employee title" id="email" name="employeetitle" type="text" autofocus="">
 							</div>
-							<div class="form-group">
-								<label for="">Employee department:</label>
-								<select name="employee_department" required class="form-control">
-									<?php
+                            <div class="form-group">
+                                <select name="employee_department" required class="form-control">
+                                    <option selected="">...Select department...</option>
+                                    <?php
 
-									include("connection/connector.php");
-									$query = "SELECT * FROM department_table";
-									$result = mysql_query($query);
-									echo "<option></option>";
-									while($row = mysql_fetch_array($result))
-									{
-										$department_id = $row[0];
-										$department_name = $row[1];
-										$department_faculty = $row[2];
-										echo "<option>$department_name &nbsp $department_faculty</option>";
-									}
+                                    include("connection/connector.php");
+                                    $query = "SELECT * FROM department_table";
+                                    $result = mysql_query($query);
+                                    echo "<option></option>";
+                                    while($row = mysql_fetch_array($result))
+                                    {
+                                        $department_id = $row[0];
+                                        $department_name = $row[1];
+                                        $department_faculty = $row[2];
+                                        echo "<option>$department_name &nbsp $department_faculty</option>";
+                                    }
 
-									?>
-								</select>
-							</div>
+                                    ?>
+                                </select>
+                            </div>
 							<div class="form-group">
 								<input class="form-control" type="text" name="employeefirstname" id="firstname" placeholder="First name">
 							</div>
@@ -86,7 +86,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Username" name="employeeusername" autocomplete="off"  minlength="4" required/>
+								<input type="text" class="form-control" placeholder="Employee Number" name="employeeusername" autocomplete="off"  minlength="4" required/>
 								<!--<span class="" id="user-result"></span>-->
 								<td> <span id="user-result"></span></td>
 							</div>
