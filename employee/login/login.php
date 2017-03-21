@@ -41,17 +41,17 @@
 							<div class="form-group">
 								<input class="form-control" placeholder="Password" name="password" type="password" value="">
 							</div>
-							<!--<div class="form-group">
+							<div class="form-group">
 								<select name="category" id="category"  class="form-control" required>
                                     <option selected="" value=''>--Select--</option>
-									<option value='1'> Farmer<font color="red">*</font></option>
-									<option value='2'> Collector*</option>
-									<option value='3'> Accounts*</option>
+									<!--<option value='1'> Farmer<font color="red">*</font></option>-->
+									<!--<option value='2'> Collector*</option>-->
+                                    <option value='3'> Employee*</option>
 									<option value='4'> Admin*</option>
 
 									<span class="glyphicon glyphicon-envelope form-control"></span>
 								</select>
-							</div>-->
+							</div>
 							<div class="checkbox">
 								<label>
 									<input name="remember" type="checkbox" value="Remember Me">Remember Me
@@ -71,7 +71,7 @@
 
 					include_once("connection/conn.php");
 					$username=$_POST['username'];
-					//$category=$_POST['category'];
+					$category=$_POST['category'];
 					$mypassword=$_POST['password'];
 					$loginpassword=hash("sha256" ,$mypassword);
 					// testfile.php
@@ -103,7 +103,7 @@ _END;
 
 					//$sql = mysql_query("INSERT INTO users(username,password, LEVEL) VALUES('$username', '$pass', 4)");
 
-					$sql = "SELECT * FROM login_table WHERE login_username='$username' AND login_password='$loginpassword' AND login_status='active' ";
+					$sql = "SELECT * FROM login_table WHERE login_username='$username' AND login_password='$loginpassword' AND login_category='$category' AND login_status='active' ";
 					$result = mysql_query($sql);
 
 					?>
