@@ -41,7 +41,7 @@ $mobnum=$row['phonenum'];
 
       <!-- Info boxes -->
 <!-- Your Page Content Here ..................................................................-->
-<p> <a href="index.php"><i class="fa fa-mail-reply-all"></i> Back</a></p>
+<p> <a href="booking.php"><i class="fa fa-mail-reply-all"></i> Back</a></p>
 <?php
 
 

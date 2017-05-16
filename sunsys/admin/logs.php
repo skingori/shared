@@ -35,7 +35,7 @@ if (isset($_SESSION['userid']) && isset($_SESSION['category'])) {
     <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
     <table cellpadding="1" cellspacing="1" id="users" width="100%" class="table table-bordered table-hover ">
         <thead>
-        <tr class="bg-red-gradient">
+        <tr style="background-color: #b3d271">
             <th>ID</th>
             <th>Activity</th>
             <th>Activity by</th>

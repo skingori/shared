@@ -45,7 +45,7 @@ $mobnum=$row['phonenum'];
       <!-- Your Page Content Here ..................................................................-->
       <div class="box-body">
 
-        <p><h4><b><font color="red"> Perform a full payment</font></h4></b></p>
+        <small style="color: red">You are about to Perform a full payment</small>
 
         <?php
         include("../connection/dbconn.php");
@@ -82,7 +82,7 @@ $mobnum=$row['phonenum'];
           </div>
 
           <div class="form-group has-feedback">
-            <label for="selectopt"><font color="red"> Select Payment Method*</font></label>
+            <label for="selectopt">Payment Mode:</label><label style="color: red">*</label>
             <select id="selectopt" class="form-control">
               <option value="" selected >--SELECT OPTION--</option>
               <option value="1" >--CASH--</option>
@@ -110,8 +110,8 @@ $mobnum=$row['phonenum'];
           </div>
 
           <div class="form-group has-feedback">
-            <input id="mpesa" hidden="hidden" name="mpesa" class="form-control" placeholder="MPESA REFERENCE NUMBER"/>
-            <input id="bank" hidden="hidden" name="bank" class="form-control" placeholder="BANK REFERENCE/RECEIPT NUMBER" required/>
+            <input id="mpesa" hidden="hidden" name="mpesa" class="form-control" placeholder="MPESA REFERENCE NUMBER">
+            <input id="bank" hidden="hidden" name="bank" class="form-control" placeholder="BANK REFERENCE/RECEIPT NUMBER">
           </div>
 
 
@@ -124,8 +124,8 @@ $mobnum=$row['phonenum'];
 
 
 
-          <div class="col-xs-4">
-            <button type="submit" value="" name="cancel" class="btn btn-primary btn-block btn-flat">Confirm?</button>
+          <div class="form-group">
+            <button type="submit" value="" name="update" class="btn btn-primary btn-flat">Confirm?</button>
 
           </div>
 
@@ -135,7 +135,7 @@ $mobnum=$row['phonenum'];
 
 
         <?php
-        if (isset($_POST['cancel'])){
+        if (isset($_POST['update'])){
           $ss=$_POST['bid'];
           $pay=$_POST['payment'];
           $bank=$_POST['bank'];
@@ -143,7 +143,7 @@ $mobnum=$row['phonenum'];
 
 
 
-          $query="UPDATE booking SET  book_status='paid', bal_paid='$pay' ,bankref='$bank' ,mpesaref='$mpesa' WHERE id='".$ss."'";
+          $query="UPDATE booking SET  book_status='paid', bal_paid='$pay' ,bankref='$bank' ,mpesaref='$mpesa' WHERE id='$cc'";
 
           if(!mysql_query($query,$conn))
           {die ("An unexpected error occured while Cancelling Please try again!");}

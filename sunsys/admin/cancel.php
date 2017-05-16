@@ -43,8 +43,6 @@ $mobnum=$row['phonenum'];
             <!-- Your Page Content Here ..................................................................-->
             <div class="box-body">
 
-                <p><h4><b><font color="red"> Do you Confirm Charges and Cancelation ?</font></h4></b></p>
-
                 <?php
                 include("../connection/dbconn.php");
 
@@ -102,8 +100,8 @@ $mobnum=$row['phonenum'];
                     </div>
                     </div>-->
 
-                    <div class="col-xs-4">
-                        <button type="submit" value="" name="cancel" class="btn btn-primary btn-block btn-flat"><b>Confirm?</b></button>
+                    <div class="form-group">
+                        <button type="submit" value="" name="cancel" class="btn btn-primary btn-flat"><b>Confirm?</b></button>
 
                     </div>
 

@@ -30,33 +30,29 @@ header('Location:index.php');
 <?php include "xh.php";?>
 
       <!-- Your Page Content Here by samson -->
-      
 
-      <div class="register-box-body">
         <!--<p class="login-box-msg">Register a new Apartment </p>-->
-        <p><h4><font color="#a52a2a">Add New Policy</font></h4></p>
         
         <form id="newapartment" method="POST" action="">
             
         <div class="form-group has-feedback">
-            <input type="text" name="policynum" placeholder="Policy Number" value="" class="form-control" required>
+            <input type="text" name="policynum" pattern="[a-zA-Z\s]+" placeholder="Policy Number" value="" class="form-control" required>
         </div>
         <div class="form-group has-feedback">
-            <input type="Text" placeholder="Policy" name="policytype"  value="" class="form-control" required>
+            <input type="Text" placeholder="Policy" pattern="[a-zA-Z\s]+" name="policytype"  value="" class="form-control" required>
         </div>
         <div class="form-group has-feedback">
-         <textarea placeholder="Other Details" name="odtails" value="" class="form-control" required></textarea>
+         <textarea placeholder="Other Details" pattern="[a-zA-Z\s]+" name="odtails" value="" class="form-control" required></textarea>
         </div>
 
 
-            <div class="col-xs-4">
-                <button type="submit"  name="policy" class="btn btn-primary btn-block btn-flat">Save Information</button>
+            <div class="form-group">
+                <button type="submit"  name="policy" class="btn btn-primary bg-red btn-flat">New Policy</button>
          
             </div>
             
             
         </form>
-    </div>
     
     
     <?php include '../connection/dbconn.php'; ?>

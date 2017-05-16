@@ -232,7 +232,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <!-- No Number -->
 <script>
                                   $(document).ready(function(){
-                      $("#username").keypress(function(event){
+                      $("#username,#othernames,#sirname").keypress(function(event){
                           var inputValue = event.charCode;
                           if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
                               event.preventDefault();
@@ -243,25 +243,8 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 
                   });
 //for username
-                   $(document).ready(function(){
-                      $("#sirname").keypress(function(event){
-                          var inputValue = event.charCode;
-                          if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
-                              event.preventDefault();
-                              alert("Wrong input for Sirname | Number not allowed");
-                          }
-                      });
-                  });
 //for username
-                   $(document).ready(function(){
-                      $("#othernames").keypress(function(event){
-                          var inputValue = event.charCode;
-                          if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
-                              event.preventDefault();
-                              alert("Wrong input for Name | Number not allowed");
-                          }
-                      });
-                  });
+
 </script>
 
 

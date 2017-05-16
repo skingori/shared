@@ -75,8 +75,8 @@ $UserName=$row['username'];
                 <span class="glyphicon glyphicon-qrcode form-control-feedback"></span>
           </div>
             
-            <div class="col-xs-4">
-                <button type="submit" value="" name="updateadmin" class="btn btn-primary btn-block btn-flat">Save Information</button>
+            <div class="form-inline">
+                <button type="submit" value="" name="updateadmin" class="btn btn-primary btn-flat">Save Information</button>
                 
             </div>
             

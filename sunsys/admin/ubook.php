@@ -42,7 +42,7 @@ $mobnum=$row['phonenum'];
 <?php include "xh.php"; ?>
 
       <!-- Your Page Content Here -->
-        <p> <a href="index.php"><i class="fa fa-mail-reply-all"></i> Back</a></p>
+        <p> <a href="booking.php"><i class="fa fa-mail-reply-all"></i> Back</a></p>
 <?php
         $id=$_REQUEST['apart_name'];
 
@@ -52,7 +52,7 @@ $mobnum=$row['phonenum'];
         if($count >0)
 
 ?>
-            <div class="box-body" >
+
         <!--<p class="login-box-msg" > Register a new Apartment </p > -->
 
         <form id = "newapartment" method = "POST" action = "" >
@@ -73,17 +73,18 @@ $mobnum=$row['phonenum'];
             <label > Owner Contact:</label ><input type = "text" placeholder = "" readonly = "" name = "ownernum" id = "" value ="<?php echo $array['mobile_num'];?>" class="form-control" >
         </div >
         <div class="form-group has-feedback" >
-                <label > Start date:</label ><input type = "date" placeholder = "Start date" name = "bookfrom" id = "datepicker-2months" value = "" class="form-control" required >
+                <label > Start date:</label ><input type = "date" placeholder = "Start date" onchange="calc()" name = "bookfrom" id = "startdate" value = "" class="form-control" required >
         </div >
 
           <!--My personal code-->
-         
+
 
           <!--my personal code-->
 
 
           <div class="form-group has-feedback" >
-            <label > End date:</label ><input type = "date" placeholder = "End date" name = "bookto" id = "datepicker2" value = "" class="form-control" required>
+            <label > End date:</label >
+              <input type = "date" placeholder = "End date" onchange="calc()" name = "bookto" id = "enddate" value = "" class="form-control" required>
 
           </div >
 
@@ -97,19 +98,18 @@ $mobnum=$row['phonenum'];
         </div >
 
         <div class="form-group has-feedback" >
-            <label > Total Payment:</label ><input type = ""  placeholder = "" name = "totalpay" id = "dep" value = "<?php echo $array['apart_price'];?>" readonly class="form-control" required />
+            <?php
+            $price=$array['apart_price'];
+            ?>
+            <label > Total Payment:</label ><input type = "" readonly="" placeholder = "" name = "totalpay" id = "output" value = "" class="form-control" required />
         </div >
 
-            <?php
 
-            $deposit=$array['apart_price'] / 2
-
-            ?>
         <div class="form-group has-feedback" >
-            <label ><font color="red"> Deposit to be Paid*</font></label ><input type = ""  placeholder = "Deposit paid" readonly name = "depositpaid" id = "dep" value = "<?php echo $deposit;?>" class="form-control" required />
+            <label >Deposit to be Paid </label><label style="color: red">*</label><input type = ""  placeholder = "Deposit paid" readonly name = "depositpaid" id = "dep" value = "<?php echo $deposit;?>" class="form-control" required />
         </div >
         <div class="form-group has-feedback">
-            <label for="selectopt"><font color="red" aria-required="true"> Select Payment Method*</font></label>
+            <label for="selectopt">Select Payment Method<small style="color: red" > *</small></label>
             <select id="selectopt"  class="form-control">
                 <option value="" name="mode" selected >--SELECT OPTION--</option>
                 <option value="1" >--CASH--</option>
@@ -129,19 +129,18 @@ $mobnum=$row['phonenum'];
 
 
         <div class="form-group has-feedback" >
-            <label > Application:</label ><input type = "checkbox" name = "bookstatus" value = "applied" checked = "checked" readonly = "" />
+            <label > Agree to Terms And Conditions :</label ><input type = "checkbox" required="" name = "bookstatus" value = "applied"  >
             </select >
         </div >
 
 
-        <div class="col-xs-4" >
-            <button type = "submit" value = "book apartment" name = "book" class="btn btn-primary " > Save information </button >
+        <div class="form-group" >
+            <button type = "submit" value = "book apartment" name = "book" class="btn btn-primary  bg-red-gradient" > Book/Rent </button >
 
         </div >
 
 
         </form >
-    </div>
 
 
     <?php include '../connection/dbconn.php'; ?>
@@ -182,7 +181,21 @@ VALUES('$apartbooked','$bookedby','$bookfrom','$bookto','$bookstatus','$depositp
     <?php
         }
      ?>
-
+<script>
+    function calc() {
+        var datex = document.getElementById('startdate').value;
+        var datey = document.getElementById('enddate').value;
+        var date1 = new Date(datex);
+        var date2 = new Date(datey);
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        //for full price
+        var days= diffDays * <?php echo $price?>;
+        document.getElementById('output').value = days;
+        //for deposit
+        document.getElementById('dep').value = days/2;
+    }
+</script>
 
     <!-- Main content -->    <!-- right col -->
 <?php include "xf.php"; ?>

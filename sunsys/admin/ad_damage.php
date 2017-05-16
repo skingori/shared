@@ -29,40 +29,38 @@ header('Location:index.php');
       <!-- Your Page Content Here by samson -->
       
 
-      <div class="register-box-body">
+
         <!--<p class="login-box-msg">Register a new Apartment </p>-->
-        <p><h4><font color="#a52a2a">Add New Damage</font></h4></p>
         
         <form id="newapartment" method="POST" action="">
             
         <div class="form-group has-feedback">
-            <input type="text" name="damageby" placeholder="Damage Caused by" value="" class="form-control" required>
+            <input type="text" name="damageby" pattern="[a-zA-Z\s]+" placeholder="Damage Caused by" value="" class="form-control" required>
         </div>
         <div class="form-group has-feedback">
-            <input type="Text" placeholder="Mobile Number" name="dmobnumber"  value="" class="form-control" required>
+            <input type="number" placeholder="Mobile Number"  name="dmobnumber"  value="" class="form-control" required>
         </div>
         <!--<div class="form-group has-feedback">
             <input type="Text" placeholder="Date today" name="date"  value="" class="form-control" required>
         </div>-->
         <div class="form-group has-feedback">
-          <input type="Text" placeholder="Damage" name="damage"  value="" class="form-control" required>
+          <input type="Text" placeholder="Damage" pattern="[a-zA-Z\s]+" name="damage"  value="" class="form-control" required>
         </div>
         <div class="form-group has-feedback">
           <input type="number" placeholder="Charges" name="charges"  value="" class="form-control" required>
         </div>
         <div class="form-group has-feedback">
-         <textarea placeholder="Other Details" name="otherdtails" value="" class="form-control" required></textarea>
+         <textarea placeholder="Other Details" pattern="[a-zA-Z\s]+" name="otherdtails" value="" class="form-control" required></textarea>
         </div>
 
 
-            <div class="col-xs-4">
-                <button type="submit"  name="policy" class="btn btn-primary btn-block btn-flat">Save Information</button>
-         
+            <div class="form-group">
+                <button type="submit"  name="policy" class="btn btn-flat bg-red">Add Damage</button>
+
             </div>
             
             
         </form>
-    </div>
     
     
     <?php include '../connection/dbconn.php'; ?>
@@ -87,8 +85,14 @@ VALUES('$damageby','$mobile',now() ,'$damage','$charges','$otherdetails' ,'Damag
                         VALUES('Damage Addaed','By admin' , now() )
                         ")or die(mysql_error());
   //end of logs
+    ?>
 
-echo '<font color="Green"><b> Damage added to list </font></b>';
+    <script type="text/javascript">
+        alert('Damage added to list');
+        window.location="ad_damage.php";
+    </script>
+
+    <?php
 }
  else {
     echo '<font color="red"><b> Empty fields not allowed </font></b>';

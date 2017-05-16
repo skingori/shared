@@ -89,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
     -->
-<body class="hold-transition skin-red sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
     <!-- Main Header -->
@@ -203,7 +203,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Optionally, you can add icons to the links -->
 
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Properties</span>
+                    <a href="#"><i class="fa fa-home"></i> <span>Properties</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -217,7 +217,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Damages</span>
+                    <a href="#"><i class="fa fa-plug"></i> <span>Damages</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -229,7 +229,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Policies</span>
+                    <a href="#"><i class="fa fa-gavel"></i> <span>Policies</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -240,9 +240,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     </ul>
                 </li>
-                <li class="active"><a href="booking.php"><i class="fa fa-link"></i> <span>Book | Rent</span></a></li>
+                <li class="active"><a href="booking.php"><i class="fa fa-credit-card"></i> <span>Book | Rent</span></a></li>
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Reports</span>
+                    <a href="#"><i class="fa fa-folder-open"></i> <span>Reports</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -253,7 +253,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Admin Settings</span>
+                    <a href="#"><i class="fa fa-cog"></i> <span>Admin Settings</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

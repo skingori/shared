@@ -246,7 +246,6 @@ desired effect
 
       <div class="content">
         <!--<p class="login-box-msg">Register a new Apartment </p>-->
-        <p><h4><font color="#a52a2a">Write to us</font></h4></p>
 
         <form id="newapartment" method="POST" action="">
 
@@ -282,8 +281,8 @@ desired effect
           </div>
 
 
-          <div class="col-xs-4">
-            <button type="submit"  name="policy" class="btn btn-primary btn-block btn-flat">Submit</button>
+          <div class="form-group">
+            <button type="submit"  name="policy" class="btn btn-primary btn-flat bg-olive">Submit</button>
 
           </div>
 

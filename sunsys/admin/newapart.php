@@ -41,6 +41,7 @@ $mobnum=$row['phonenum'];
 ?>
 
 <?php include "xh.php"; ?>
+
       <!--................<!-- Your Page Content Here by samson --.................................content here -->
 
 
@@ -48,19 +49,21 @@ $mobnum=$row['phonenum'];
         <!--<p class="login-box-msg">Register a new Apartment </p>-->
         <form id="newapartment" method="POST" action="">
           <div class="form-group has-feedback">
-            <label>Apartment Name:</label><input type="text" name="apartname" placeholder="Enter Name" id="apartname" value="" class="form-control" required="">
+            <label>Apartment Name:</label>
+              <input type="text" name="apartname" pattern="[a-zA-Z\s]+" title="Only enter letters" placeholder="Enter Name" id="apartname" value="" class="form-control" required=""/>
+
           </div>
           <div class="form-group has-feedback">
-            <label>Location:</label><input type="Text" placeholder="Location" name="apartloc" id="apartloc" value="" class="form-control">
+            <label>Location:</label><input type="Text" pattern="[a-zA-Z\s]+" placeholder="Location" name="apartloc" id="apartloc" value="" class="form-control">
           </div>
           <div class="form-group has-feedback">
-            <label>Owner Name:</label><input type="Text" placeholder="" name="ownername"  id="ownername" value="<?php echo "".$OtherNames."";?>" class="form-control" required="">
+            <label>Owner Name:</label><input type="Text" placeholder="" readonly="" name="ownername"  id="ownername" value="<?php echo "".$OtherNames."";?>" class="form-control" required="">
           </div>
           <div class="form-group has-feedback">
-            <label>Mobile Number:</label><input type="Text" placeholder="" name="mobilenum" id="mobilenum"  value="<?php echo $mobnum;?>" class="form-control" required="">
+            <label>Mobile Number:</label><input type="tel" placeholder="" readonly="" name="mobilenum" id="mobilenum"  value="<?php echo $mobnum;?>" class="form-control" required="">
           </div>
           <div class="form-group has-feedback">
-            <label>Units:</label><input type="Text" placeholder="Units Available" name="numunits" id="" value="" class="form-control">
+            <label>Units:</label><input type="Text" placeholder="Units Available" pattern="[a-zA-Z\s]+" name="numunits" id="" value="" class="form-control">
           </div>
           <div class="form-group has-feedback">
             <label>Status:</label><select name="status" id="status" value="" class="form-control" required>
@@ -70,7 +73,7 @@ $mobnum=$row['phonenum'];
             </select>
           </div>
           <div class="form-group has-feedback">
-            <label>Pricing:</label><input type="text" placeholder="Amount" name="price" id="price" value="" class="form-control" required="" />
+            <label>Pricing:</label><input type="number" placeholder="Amount" name="price" id="price" value="" class="form-control" required="" />
           </div>
 
           <!---  upload code
@@ -78,7 +81,7 @@ $mobnum=$row['phonenum'];
             <label>Upload Property Image:</label>
             <input type="file" name="image"  id="in" class="form-control" required />
           </div>
-           upload code end     -->
+           upload code end -->
 
 
           <div class="form-group has-feedback">
@@ -92,17 +95,17 @@ $mobnum=$row['phonenum'];
             <label>Cancelation Charges:<i><font color="red"> *To be used in case of canceled booking* </i></font> </label><input type="number" placeholder="Add charges" name="cancelcharge" id="regdate" value="" class="form-control">
           </div>-->
           <div class="form-group has-feedback">
-            <label>Furniture</label><textarea placeholder="Items to find from this apartment" name="furniture" id="" value="" class="form-control"></textarea>
+            <label>Furniture</label><textarea pattern="[a-zA-Z\s]+" placeholder="Items to find from this apartment" name="furniture" id="" value="" class="form-control"></textarea>
 
           </div>
 
           <div class="form-group has-feedback">
-            <label>Other Details:</label><textarea placeholder="Other details" name="otherdet" id="" value="" class="form-control"></textarea>
+            <label>Other Details:</label><textarea pattern="[a-zA-Z\s]+" placeholder="Other details" name="otherdet" id="" value="" class="form-control"></textarea>
           </div>
 
-          <div class="col-xs-4">
-            <input type="submit" value="New Apartment" name="create" class="btn btn-primary">
-            <input type="button" onclick="location.href='upload.php';" value="Next" class="btn btn-primary"/>
+          <div class="form-inline">
+              <button type="submit" value="New Apartment" name="create" class="btn bg-blue btn-default "><i class="fa fa-home"> New Apartment</i>
+            <button type="button" onclick="location.href='upload.php';" value="Next" class="btn bg-red-gradient"><i class="fa fa-image"> Image</i>
           </div>
 
         </form>
@@ -135,13 +138,20 @@ $mobnum=$row['phonenum'];
         $query=mysql_query("INSERT INTO apartments(`apart_name`,`apart_loc`,`owner_name`,`mobile_num`,`apart_status`,`apart_price`,`regdate`, `num_units`,`furniture` ,`other_det` ,`logs`)
 VALUES('$apartname','$apartloc','$ownername','$mobilenum','$status','$price','$regdate', '$numunits', '$furniture' ,'$otherdet' ,'Apartment added')
 ")or die(mysql_error());
-        echo '<font color="Green"><b> Apartment added to list </font></b>';
 
 
 
 
-      }?>
+          ?>
 
+          <script type="text/javascript">
+              alert('The Account has been canceled and charges applied');
+              window.location="newapart.php";
+          </script>
+
+          <?php
+      }
+?>
 
       <!-- end of your contet --------------<!--  END Your Page Content Here by samson -------------------------->
 <?php include "xf"; ?>

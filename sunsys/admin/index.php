@@ -138,7 +138,7 @@ $UserName=$row['username'];
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
-                        <span class="info-box-icon bg-danger"><a href=""><i class="ion ion-android-cart"></i></a></span>
+                        <span class="info-box-icon bg-danger"><a href="pos.php"><i class="ion ion-android-cart"></i></a></span>
 
                         <div class="info-box-content">
                             <span class="info-box-text">POS</span>

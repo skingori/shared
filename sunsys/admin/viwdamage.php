@@ -37,7 +37,7 @@ include "xh.php";
                 <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
                 <table cellpadding="1" cellspacing="1" id="damage" width="100%" class="tbl table-striped">
                     <thead>
-                    <tr class="bg-red-gradient">
+                    <tr style="background-color: #b3d271">
                         <th>#</th>
                         <th>DAMAGE BY</th>
                         <th>MOBILE NUMBER</th>

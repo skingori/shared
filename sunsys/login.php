@@ -56,7 +56,7 @@
 
                 <div class="checkbox icheck">
                     <label>
-                        <input type="checkbox" required=""> Remember me</a>
+                        <input type="checkbox" required=""> Accept our terms  </a>
                     </label>
                 </div>
 

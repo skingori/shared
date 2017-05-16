@@ -25,6 +25,7 @@
         <!-- Home tab content -->
         <div class="tab-pane active" id="control-sidebar-home-tab">
             <h3 class="control-sidebar-heading">Recent Activity</h3>
+            
             <!--<!--<!--<ul class="control-sidebar-menu">
               <li>
                 <a href="javascript::;">
@@ -37,8 +38,8 @@
                   </div>
                 </a>
               </li>
-            </ul>-->-->-->
-            <!-- /.control-sidebar-menu -->
+            </ul>-->
+            <!-- /.control-sidebar-menu ->
 
             <h3 class="control-sidebar-heading">Tasks Progress</h3>
             <ul class="control-sidebar-menu">
@@ -160,5 +161,7 @@
     })
 
 </script>
+
+
 </body>
 </html>
