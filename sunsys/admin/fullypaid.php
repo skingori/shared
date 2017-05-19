@@ -35,7 +35,11 @@ header('Location:index.php');
                 <div class="content_section">
                 <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Paid Applications</h3>
+                            <span class="input-group-btn">
+
+                            <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-print"></i></button>&nbsp;
+                            <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-file"></i></button>
+                            </span>
                           </div>
 
                 <?php 
@@ -44,7 +48,7 @@ header('Location:index.php');
 
                                   $resource=mysql_query($query,$conn);
                                   echo "
-                                <table align=\"center\" border=\"\" width=\"100%\" class=\"table table-bordered table-striped\">
+                                <table align=\"center\" border=\"0\" width=\"100%\" class=\"table table-bordered table-striped\" id=\"table1\">
                                 <tr>
                                 <td><b>Apartment Name</b></td> <td><b>Booked by</b></td><td><b>Date booked</b></td><td><b>Deposit Paid</b></td><td><b>Balance Paid(Kshs)</b></td></tr>";
                 while($result=mysql_fetch_array($resource))

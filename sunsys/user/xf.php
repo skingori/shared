@@ -1,3 +1,4 @@
+</div>
 </section>
 <!-- /.content -->
 </div>
@@ -25,7 +26,7 @@
         <!-- Home tab content -->
         <div class="tab-pane active" id="control-sidebar-home-tab">
             <h3 class="control-sidebar-heading">Recent Activity</h3>
-            
+
             <!--<!--<!--<ul class="control-sidebar-menu">
               <li>
                 <a href="javascript::;">
@@ -93,24 +94,22 @@
 </div>
 <!-- ./wrapper -->
 
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/app.min.js"></script>
-
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+
+
+
 
 <script>
     $(function () {
@@ -125,7 +124,17 @@
         });
     });
 </script>
+<script>
+    function printData()
+    {
+        var divToPrint=document.getElementById("table1");
+        newWin= window.open("");
+        newWin.document.write(divToPrint.outerHTML);
+        newWin.print();
+        newWin.close();
+    }
 
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
@@ -161,18 +170,6 @@
     })
 
 </script>
-<script>
-    function printData()
-    {
-        var divToPrint=document.getElementById("table1");
-        newWin= window.open("");
-        newWin.document.write(divToPrint.outerHTML);
-        newWin.print();
-        newWin.close();
-    }
-
-</script>
-
 
 </body>
 </html>

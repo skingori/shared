@@ -41,7 +41,7 @@ header('Location:index.php');
       <th>Other Names</th>
       <th>Email</th>
       <th>Mobile Number</th>
-      <th>Status</th>
+        <th></th>
     </tr>
     </thead>
     <tfoot>
